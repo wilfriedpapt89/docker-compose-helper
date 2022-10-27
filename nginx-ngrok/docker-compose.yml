@@ -1,0 +1,25 @@
+#To Expose my port 80 on public
+#if there is a demo or showing to my teammates
+
+services:
+ www:
+  image: "nginx:stable"
+  ports:
+   - 80:80
+  networks:
+   - myngroknet
+
+ willngrok:
+  image: ngrok/ngrok
+  ports:
+   - 4040:4040
+  networks:
+   - myngroknet
+  environment:
+  #GRAB AUTH TOKEN ON NGROK WEBSITE AND REPLACE 'AUTH_TOKEN'
+   - NGROK_AUTHTOKEN=AUTH_TOKEN
+  #www is the name of nginx container so DNS can find it
+  #else by this command by default is 'http 80'
+  command: http www:80
+networks:
+ myngroknet:
