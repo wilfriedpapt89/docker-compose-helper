@@ -8,9 +8,10 @@ services:
    - 3307:3306
   environment:
    MYSQL_DATABASE: "db_name"
-   #None root user
-   MYSQL_USER: "user_name"
-   MYSQL_PASSWORD: "user_password"
+   ###for None root user user_name  : uncomment the line below
+   # MYSQL_USER: "erp_user"
+   ### for None root user user_password : uncomment the line below
+   # MYSQL_PASSWORD: "erp_password"
    MYSQL_ROOT_PASSWORD: "root_password"
   volumes:
    - my-vol:/var/lib/mysql
