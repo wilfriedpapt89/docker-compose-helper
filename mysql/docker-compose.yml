@@ -9,10 +9,11 @@ services:
   environment:
    MYSQL_DATABASE: "db_name"
    ###for None root user user_name  : uncomment the line below
-   # MYSQL_USER: "erp_user"
+   MYSQL_USER: "crostsoft"
    ### for None root user user_password : uncomment the line below
-   # MYSQL_PASSWORD: "erp_password"
+   MYSQL_PASSWORD: "crostsoft"
    MYSQL_ROOT_PASSWORD: "root_password"
+   MYSQL_DATABASE: "modernbill"
   volumes:
    - my-vol:/var/lib/mysql
 
