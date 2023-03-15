@@ -7,13 +7,13 @@ services:
   #HOST_PORT : CONTAINER_PORT
    - 3307:3306
   environment:
-   MYSQL_DATABASE: "db_name"
-   ###for None root user user_name  : uncomment the line below
-   MYSQL_USER: "crostsoft"
+   ##for None root user user_name  : uncomment the line below
+   # MYSQL_USER: "YOUR_USER_NAME"
    ### for None root user user_password : uncomment the line below
-   MYSQL_PASSWORD: "crostsoft"
-   MYSQL_ROOT_PASSWORD: "root_password"
-   MYSQL_DATABASE: "modernbill"
+   # MYSQL_PASSWORD: "YOUR_PASSWORD"
+   # MYSQL_ROOT_PASSWORD: "root_password"
+   # MYSQL_DATABASE: "DATABASE_NAME"
+   MYSQL_ALLOW_EMPTY_PASSWORD: yes
   volumes:
    - my-vol:/var/lib/mysql
 

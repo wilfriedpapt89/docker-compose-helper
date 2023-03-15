@@ -8,6 +8,8 @@ services:
    - 80:80
   networks:
    - myngroknet
+  volumes:
+   - ./nginx.conf:/etc/nginx/conf.d/default.conf
 
  willngrok:
   image: ngrok/ngrok
@@ -17,7 +19,8 @@ services:
    - myngroknet
   environment:
   #GRAB AUTH TOKEN ON NGROK WEBSITE AND REPLACE 'AUTH_TOKEN'
-   - NGROK_AUTHTOKEN=AUTH_TOKEN
+  #  - NGROK_AUTHTOKEN=AUTH_TOKEN
+   - NGROK_AUTHTOKEN=2GiimTvVQBHzuSi6XOe1S4LU81Z_6zhLWyDMUxjxKJ3Qd35jk
   #www is the name of nginx container so DNS can find it
   #else by this command by default is 'http 80'
   command: http www:80

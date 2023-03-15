@@ -1,5 +1,13 @@
 # docker run --name mysqldb -p 3306:3306 -e MYSQL_ALLOW_EMPTY_PASSWORD=yes -d mysql
 
+#you can't get connected via bash because sql is self contained and can't be called by root user externally
+#you  need to get first get the ip of the container by running the cmd bellow
+#$ docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' mysqldb
+
+#Let's provide the above IP address in the client's host option, with the default port number and protocol type as TCP:
+#$ mysql -h $ip_adress -P 3306 --protocol=tcp -u root -p
+
+
 # connect to mysql and run as root user
 #Create Databases
 CREATE DATABASE erp_dev;
