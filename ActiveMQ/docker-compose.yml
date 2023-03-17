@@ -1,0 +1,12 @@
+version: '3.2'
+
+services:
+ message_broker: 
+  image: "quay.io/artemiscloud/activemq-artemis-broker-init:artemis.2.28.0"
+  environment:
+   MYSQL_ALLOW_EMPTY_PASSWORD: true
+   AMQ_USER: 'will'
+   AMQ_PASSWORD: 'will'
+  ports:
+   - "61616:61616"
+   - "8161:8161"
